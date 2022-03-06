@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    font-family: 'McLaren', cursive;
+    background: burlywood url("world.png") no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    text-align: center;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px auto 150px;
+    column-gap: 10px;
+    row-gap: 15px;
+    perspective: 1000px;
+}
+.grid div {
+    height: 150px;
+    width: 150px;
+}
+.card {
+    border: 2px solid navy;
+    height: 150px;
+    width: 150px;
+    border-radius: 12px;
+    position: relative;
+    transition: 1s all linear;
+    transform-style: preserve-3d;
+}
+p {
+    margin: 0;
+}
+.front,
+.back {
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    border-radius: 12px;
+    position: absolute;
+}
+.front {
+    z-index: 2;
+    backface-visibility: hidden;
+}
+.back {
+    z-index: 1;
+    background-color: dodgerblue;
+    transform: rotateY(180deg);
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
